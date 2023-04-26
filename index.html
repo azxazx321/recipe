@@ -22,7 +22,7 @@
         console.log(params,p)
 
         $('#body').load(path, function(){
-            
+            $('head').append(`<link rel="stylesheet" href="./pages/${p}/${p}.css">`)
         })
     </script>
 </body>

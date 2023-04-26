@@ -1,0 +1,44 @@
+.live{
+    width: 1000px;
+    margin: 0 auto;
+    .breadcrumbs{
+        a+a::before{
+            content:'>';
+        }       
+    }
+    
+    >ul{
+        display: flex;
+        flex-wrap: wrap;
+        >li{
+            margin: 5px;
+            position: relative;
+            >img{
+                border-radius: 10px;
+            }
+            >p:last-child{
+                background-image: linear-gradient(
+              to right,
+              rgba(0, 0, 0, 0),
+              rgba(0, 0, 0, 0.5)
+            );
+                position: absolute;
+                bottom: 20px;
+                left: 0;
+                color: white;
+            }
+            >p:nth-child(3){
+                background-image: linear-gradient(
+              to right,
+              rgba(0, 0, 0, 0),
+              rgba(0, 0, 0, 0.5)
+            );
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: white;
+
+            }
+        }
+    }
+}

@@ -5,8 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live</title>
+    <!-- <link rel="stylesheet" href="./pages/live/live.css"> -->
+
 </head>
 <body>
-    This is live page
+    <div class="live">
+        <div class="breadcrumbs">
+            <a>fd</a>
+            <a>dfd</a>
+            <a>fdsfa</a>
+        </div>
+        <ul class="content">
+
+        </ul>
+    </div>
+    
+    
+    <script>
+        function getData(){
+            const url = 'https://douyu.xin88.top/api/room/list?page=1&type=ms'
+            $.get(url, data => {
+                console.log(data.data)
+                const array = data.data.list.map(element => {
+                    return `<li>
+                    <img src="${element.roomSrc}" alt="">
+                    <span>${element.roomName}</span>
+                    <p>${element.hn}</p>
+                    <p>${element.nickname}</p>
+                    </li>
+                    `})
+
+                console.log(array)
+                $('.content').append(array)
+            })
+        }
+        
+        getData()
+    </script>'
 </body>
 </html>
