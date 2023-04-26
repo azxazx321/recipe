@@ -5,14 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
+    <link rel="stylesheet" href="common/css/base.css">
+    <link rel="stylesheet" href="common/css/reset.css">
 </head>
 <body>
+    <div id="header"></div>
     <div id="body"></div>
     <div id="footer"></div>
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script>
-         //在index.html中, 使用 load 把 footer.html 加载到 #footer 元素中
         $('#footer').load("./components/footer/footer.html")
+        $('#header').load("./components/header/header.html")
+        const params = new URLSearchParams(location.search)
+        const p = params.get('p') || 'home'
+        const path = `./pages/${p}/${p}.html`
+        console.log(params,p)
+
+        $('#body').load(path, function(){
+            
+        })
     </script>
 </body>
 </html>

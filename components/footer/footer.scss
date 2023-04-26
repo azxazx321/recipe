@@ -1,0 +1,29 @@
+#footer {
+    background-color: #000;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .footer{
+ 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        >ul{
+            display: flex;
+            >li{
+                margin: 7px;
+                >a{
+                    color: white;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        >p{
+            color: white;
+            font-size: 12px;
+        }
+    }
+}
