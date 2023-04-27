@@ -1,12 +1,7 @@
 .live{
     width: 1000px;
     margin: 0 auto;
-    .breadcrumbs{
-        a+a::before{
-            content:'>';
-        }       
-    }
-    
+
     >ul{
         display: flex;
         flex-wrap: wrap;

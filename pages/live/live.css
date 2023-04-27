@@ -2,9 +2,6 @@
   width: 1000px;
   margin: 0 auto;
 }
-.live .breadcrumbs a + a::before {
-  content: ">";
-}
 .live > ul {
   display: flex;
   flex-wrap: wrap;

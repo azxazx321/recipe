@@ -1,11 +1,16 @@
 #header{
     background-color: #f75148;
+
     .header {
         display: flex;
         align-items: center;
         height: 80px;
         width: 1000px;
         margin: 0 auto;
+        >img {
+            width: 150px;
+            margin: 0 10px;
+        }
         >.search{
             border-radius: 50px;
             background-color: white;

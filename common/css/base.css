@@ -22,3 +22,7 @@ body {
 .breadcrumb>a {
   color: #333;
 }
+
+.breadcrumb>a+a::before {
+  content: '> ';
+}
