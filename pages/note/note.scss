@@ -41,5 +41,27 @@
                 
             }
         }
+
+        >.pages {
+            margin: 10px 0;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            >ul {
+                display: flex;
+                align-items: center;
+                >li{
+                    width: 35px;
+                    height: 35px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &.active{
+                        background-color: #ffa500;
+                        color: white;
+                    }
+                }
+            }
+        }
     }
 }

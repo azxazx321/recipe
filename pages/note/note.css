@@ -33,4 +33,25 @@
 }
 #body > .note > ul > li > p + p > span:last-child {
   color: grey;
+}
+#body > .note > .pages {
+  margin: 10px 0;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+#body > .note > .pages > ul {
+  display: flex;
+  align-items: center;
+}
+#body > .note > .pages > ul > li {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#body > .note > .pages > ul > li.active {
+  background-color: #ffa500;
+  color: white;
 }/*# sourceMappingURL=note.css.map */
