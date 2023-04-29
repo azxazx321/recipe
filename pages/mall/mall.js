@@ -62,5 +62,16 @@ $(function () {
     })
 
 
+    $(".mall>.pages>.prev").on('click',function(){
+      const pageSelected = $('.mall>.pages>ul>li.active').text()
+      getData((pageSelected*1)-1)
+  }
+  )
+  
+  $(".mall>.pages>.next").on('click',function(){
+      const pageSelected = $('.mall>.pages>ul>li.active').text()
+      getData((pageSelected*1)+1)
+  }
+  )
    
   })

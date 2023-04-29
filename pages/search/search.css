@@ -1,0 +1,70 @@
+#body > .search {
+  width: var(--width-main);
+  margin: 0 auto;
+}
+#body > .search > .content {
+  display: flex;
+  flex-direction: column;
+}
+#body > .search > .content > li {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  margin: 5px 0;
+  display: flex;
+}
+#body > .search > .content > li > img {
+  width: 150px;
+  border-radius: 10px;
+}
+#body > .search > .content > li > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+  padding: 10px 0;
+}
+#body > .search > .content > li > div p {
+  font-size: 18px;
+}
+#body > .search > .content > li > div p:first-child {
+  font-weight: bold;
+}
+#body > .search > .content > li > div p:nth-child(2) {
+  color: red;
+  font-weight: bold;
+}
+#body > .search > .content > li > div p:last-child {
+  color: grey;
+}
+#body > .search > .pages {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+#body > .search > .pages > ul {
+  display: flex;
+  margin: 0 3px;
+}
+#body > .search > .pages > ul > li {
+  cursor: default;
+  width: 45px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: 0 3px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+#body > .search > .pages > ul > li.active {
+  color: white;
+  background-color: orange;
+}
+#body > .search > .pages > button {
+  border: 1px solid black;
+  background-color: white;
+  width: 80px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 3px;
+}/*# sourceMappingURL=search.css.map */

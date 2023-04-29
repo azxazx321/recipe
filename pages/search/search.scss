@@ -1,0 +1,77 @@
+#body{
+    >.search {
+        width: var(--width-main);
+        margin: 0 auto;
+        >.content {
+            display: flex;
+            flex-direction: column;
+            >li {
+                border: 2px solid #ccc;
+                border-radius: 10px;
+                margin: 5px 0;
+                >img {
+                    width: 150px;
+                    border-radius: 10px;
+                }
+                display: flex;
+                >div {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    margin-left: 10px;
+                    padding: 10px 0;
+                    p {
+                        font-size: 18px;
+                        &:first-child {
+                            font-weight: bold;
+                        }
+                        &:nth-child(2){
+                            color: red;
+                            font-weight: bold;
+
+                        }
+                        &:last-child{
+                            color:grey
+                        }
+                    }
+                }
+            }
+        }
+
+        > .pages {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+      
+            > ul {
+              display: flex;
+              margin: 0 3px;
+      
+              > li {
+                cursor: default;
+                width: 45px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                margin: 0 3px;
+                background-color: white;
+                border: 1px solid black;
+                border-radius: 3px;
+                &.active {
+                  color: white;
+                  background-color: orange;
+                }
+              }
+            }
+            > button {
+                
+                border: 1px solid black;
+              background-color: white;
+              width: 80px;
+              height: 50px;
+              line-height: 50px;
+              border-radius: 3px;
+            }
+          }
+    }
+}
