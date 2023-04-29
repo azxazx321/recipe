@@ -13,6 +13,7 @@ $(function(){
                     </p>
                     </li>
                 `})
+                console.log(array)
 
             $('.note>ul').html(array)  
 

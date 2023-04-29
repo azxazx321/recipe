@@ -1,4 +1,66 @@
 #body > .mall {
   width: var(--width-main);
   margin: 0 auto;
+}
+#body > .mall > .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#body > .mall > .content > li {
+  width: 242.5px;
+  border-radius: 10px;
+  margin: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#body > .mall > .content > li > img {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+}
+#body > .mall > .content > li > p {
+  font-size: 16px;
+  padding: 0px 3px;
+  flex-grow: 1;
+}
+#body > .mall > .content > li > p + p {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-grow: 0;
+}
+#body > .mall > .content > li > p + p > span:first-child {
+  color: red;
+  font-size: 18px;
+}
+#body > .mall > .content > li > p + p > span:last-child {
+  color: grey;
+}
+#body > .mall > .pages {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+#body > .mall > .pages > ul {
+  display: flex;
+  margin: 0 3px;
+}
+#body > .mall > .pages > ul > li {
+  cursor: default;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  margin: 0 3px;
+  background-color: white;
+}
+#body > .mall > .pages > ul > li.active {
+  color: white;
+  background-color: orange;
+}
+#body > .mall > .pages > button {
+  background-color: white;
+  width: 80px;
+  height: 40px;
 }/*# sourceMappingURL=mall.css.map */

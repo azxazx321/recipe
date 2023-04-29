@@ -3,6 +3,77 @@
         width: var(--width-main);
         
         margin: 0 auto;
-        
+        >.content{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+             >li{
+                 width: 242.5px;
+                 border-radius: 10px;
+                 margin: 3px;
+                 display: flex;
+                 flex-direction: column;
+                 justify-content: space-between;
+                 >img{
+                     width: 100%;
+                     height: 250px;
+                     border-radius: 10px;
+                 }
+                 >p{
+                     font-size: 16px;
+                     padding: 0px 3px;
+                     flex-grow: 1;
+                     +p {
+                         display: flex;
+                         justify-content: space-between;
+                         align-items: end;
+                         flex-grow: 0;
+                         >span{
+                             &:first-child{
+                                color: red;
+                                font-size: 18px;
+                            }
+                             &:last-child{
+                                 color:grey
+                             }
+                         }
+                     }
+                 }
+ 
+                 
+ 
+                 
+             }
+         }
+
+         > .pages {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+      
+            > ul {
+              display: flex;
+              margin: 0 3px;
+      
+              > li {
+                cursor: default;
+                width: 40px;
+                text-align: center;
+                line-height: 40px;
+                margin: 0 3px;
+                background-color: white;
+      
+                &.active {
+                  color: white;
+                  background-color: orange;
+                }
+              }
+            }
+            > button {
+              background-color: white;
+              width: 80px;
+              height: 40px;
+            }
+          }
     }
 }
