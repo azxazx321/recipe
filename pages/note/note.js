@@ -1,11 +1,28 @@
 $(function(){
+
+    function getBottom(el) {
+        // 元素的顶部 top
+        const top = $(el).css('top') // 大概: '10px'   
+        // 获取高度
+        const height = $(el).height() // 获取的是值, 例如 20
+        // console.log({ top, height })
+        // 如何把 '10px' 转为数字 10
+        // 通过 parseFloat 转化
+        return parseFloat(top) + height
+      }
+    
     function getData(p){
         url = `https://serverms.xin88.top/note?page=${p}`
         $.get(url, data => {
             console.log(data.page)
             const array = data.data.map( element => {
+                const { width, height } = element
+                const img_w = 242.5
+                const img_h = img_w*height/width
                 return `<li>
-                    <img src="./assets/img/note/${element.cover}"/>
+                    <img src="./assets/img/note/${element.cover}"
+                        style="width: ${img_w}px; height: ${img_h}px"
+                    />
                     <p>${element.title}</p> 
                     <p>                  
                     <span>${element.name}</span>
@@ -13,7 +30,6 @@ $(function(){
                     </p>
                     </li>
                 `})
-                console.log(array)
 
             $('.note>ul').html(array)  
 
@@ -44,14 +60,52 @@ $(function(){
             page == 1 ? $btn_prev.hide() : $btn_prev.show()
             page == pageCount ? $btn_next.hide() : $btn_next.show()
            
-            $(window).scrollTop(0)
+            //$(window).scrollTop(0)
+            const els = []
 
-            
+            $('.content>li').each( (index,element) => {
+                const w = $(element).width()
+                if (index < 4) {
+                    $(element).css({ left: index * w + index * 10, top: 0})
+                    els.push(element)
+                } else {
+                    let el_min = els[0]
+                    console.log(els)
+                    //console.log(els[0],'fdjs')
+                    els.forEach( el => {
+                        if (getBottom(el) < getBottom(el_min)) {
+                            el_min = el
+                        }
+                    })
+
+                    $(element).css({
+                        left: $(el_min).css('left'),
+                        top: getBottom(el_min) + 10    
+                    })
         
+                    const index = els.indexOf(el_min)
+                    els.splice(index, 1, element)
+                
+
+                }
+            })
+
+            let el_max = els[0]
+
+            els.forEach(el => {
+                if (getBottom(el) > getBottom(el_max)) {
+                el_max = el //如果遍历的元素 比 当前最大的 还要大, 就替换
+                }
+            })
+            // 把这个最大元素的底部位置, 设置为父元素的高
+            $('.content').height(
+                getBottom(el_max)
+            )
         }
         )
     }
     
+
     getData(1)
 
     // $('.note>.pages>ul>li').click(

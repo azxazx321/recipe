@@ -6,19 +6,26 @@
         >ul{
            display: flex;
            flex-wrap: wrap;
-           justify-content: space-between;
+           //justify-content: space-between;
+           position: relative;
             >li{
-                width: 242.5px;
+                position: absolute;
+                overflow: hidden;
+                margin: 0 10px 10px 0;
+
+                width: calc((100% - 3 * 10px) / 4);
                 border: 1px solid grey;
                 box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
                 border-radius: 10px;
-                margin: 3px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
+                &:nth-child(4n) {
+                    margin-right: 0;
+                  }
+                //margin: 3px;
+                // display: flex;
+                // flex-direction: column;
+                // justify-content: start;
+                
                 >img{
-                    width: 100%;
-                    height: 250px;
                     border-radius: 10px;
                 }
                 >p{

@@ -5,21 +5,21 @@
 #body > .note > ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  position: relative;
 }
 #body > .note > ul > li {
-  width: 242.5px;
+  position: absolute;
+  overflow: hidden;
+  margin: 0 10px 10px 0;
+  width: calc((100% - 30px) / 4);
   border: 1px solid grey;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  margin: 3px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+}
+#body > .note > ul > li:nth-child(4n) {
+  margin-right: 0;
 }
 #body > .note > ul > li > img {
-  width: 100%;
-  height: 250px;
   border-radius: 10px;
 }
 #body > .note > ul > li > p {
