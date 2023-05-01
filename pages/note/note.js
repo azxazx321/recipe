@@ -83,8 +83,9 @@ $(function(){
                         top: getBottom(el_min) + 10    
                     })
         
-                    const index = els.indexOf(el_min)
-                    els.splice(index, 1, element)
+                    const index_min = els.indexOf(el_min)
+                    console.log(index,index_min)
+                    els.splice(index_min, 1, element)
                 
 
                 }

@@ -63,3 +63,12 @@ input {
 a {
   text-decoration: none;
 }
+
+img,
+video {
+  object-fit: cover;
+}
+
+i {
+  display: inline-block;
+}
