@@ -32,7 +32,6 @@ $(function() {
         
                 contents.forEach(content => {
                   const { desc, pic, title } = content
-                console.log(pic)
                   $('.swiper-wrapper').append(`<div class="swiper-slide">
                     <img src="./assets/img/food/${pic}" alt="">
                     <b>${title}</b>
@@ -46,7 +45,35 @@ $(function() {
 
             )
     
-             
+        
+        $('.index-items').html(
+            data.index_items.map(
+                element => {
+                    const {title, items} = element
+                    const item_list = items.map(
+                        item => {
+                            const {author, desc, pic, title} = item
+                            return `<li>
+                                <div>
+                                    <img src="./assets/img/food/${pic}" alt="food" />
+                                    <span>${author}</span>
+                                </div>
+                                <b>${title}</b>
+                                <p>${desc}</p>
+                            </li>`
+                        }
+                    )
+
+
+
+                    return `<div>
+                     <h2>${title}</h2>
+                     <ul>${item_list.join('')}</ul>
+                    </div>`
+
+                }
+            )
+        )
          
     })
 
