@@ -40,4 +40,16 @@
 #header .header > a {
   margin-left: auto;
   color: white;
+}
+#header .header .user {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+}
+#header .header .user > img {
+  width: 50px;
+  border-radius: 100%;
+}
+#header .header .user > a {
+  color: white;
 }/*# sourceMappingURL=header.css.map */

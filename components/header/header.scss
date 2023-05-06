@@ -42,9 +42,24 @@
     }
     >a {
         margin-left: auto;
-        color: white;
+        color: white;   
     }
 
+    .user {
+        display: flex;
+        margin-left: auto;
+        align-items: center;
+        > img {
+            width: 50px;
+            border-radius: 100%;
+        }
+        > a {
+            color: white;
+
+        }
+        
+
+    }
     }
     
     
