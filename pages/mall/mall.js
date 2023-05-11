@@ -105,6 +105,7 @@ $(function () {
       if($(window).scrollTop() + $(window).height() +150 >= $(document).height()) {
          console.log('bottom is already')
          getData(currentPage + 1)
+         console.log(currentPage)
       }
    })
    

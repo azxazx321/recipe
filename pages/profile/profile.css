@@ -9,13 +9,14 @@ body {
 #body > .profile {
   display: flex;
   width: var(--width-main);
-  margin: 0 auto;
+  margin: 10px auto;
   justify-content: space-between;
 }
 #body > .profile > .left {
   padding: 20px;
   width: 25%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  height: 400px;
 }
 #body > .profile > .left > ul {
   margin-top: 40px;
@@ -53,6 +54,26 @@ body {
   margin-left: 20px;
   background-color: var(--color-primary);
   color: white;
+  padding: 8px 40px;
+  border-radius: 5px;
+}
+#body > .profile > .right #photo > div {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+  height: 400px;
+  overflow-x: hidden;
+}
+#body > .profile > .right #photo > div > img {
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+}
+#body > .profile > .right > div:last-child > button {
+  margin-left: 20px;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 18px;
   padding: 8px 40px;
   border-radius: 5px;
 }/*# sourceMappingURL=profile.css.map */

@@ -10,11 +10,18 @@ $(function(){
         // 通过 parseFloat 转化
         return parseFloat(top) + height
       }
-    
+
+    let currentPage = 1
+    let loading = false
+
     function getData(p){
+        console.log(p,'getData')
+        if($('.nomore:visible').length == 1) return
+        if(loading) return
+        loading = true
         url = `https://serverms.xin88.top/note?page=${p}`
         $.get(url, data => {
-            console.log(data.page)
+            loading = false
             const array = data.data.map( element => {
                 const { width, height } = element
                 const img_w = 242.5
@@ -30,12 +37,26 @@ $(function(){
                     </p>
                     </li>
                 `})
+            $('.note>ul').append(array)  
 
-            $('.note>ul').html(array)  
-
-            $('.note>.pages>ul').empty()
+            //$('.note>.pages>ul').empty()
 
             const {page, pageCount} = data
+            
+            currentPage = page
+            if (page == pageCount) {
+                $('.nomore').show()
+                $('.loading').hide()
+            } else {
+                $('.nomore').hide()
+                $('.loading').show()
+            }
+
+
+
+
+
+
             let start = page - 2
             let end = page + 2
 
@@ -70,8 +91,7 @@ $(function(){
                     els.push(element)
                 } else {
                     let el_min = els[0]
-                    console.log(els)
-                    //console.log(els[0],'fdjs')
+                    //console.log(els)
                     els.forEach( el => {
                         if (getBottom(el) < getBottom(el_min)) {
                             el_min = el
@@ -84,7 +104,6 @@ $(function(){
                     })
         
                     const index_min = els.indexOf(el_min)
-                    console.log(index,index_min)
                     els.splice(index_min, 1, element)
                 
 
@@ -108,6 +127,19 @@ $(function(){
     
 
     getData(1)
+
+    $(window).on('scroll', function() {
+        const top = $(window).scrollTop()
+
+        const win_h = $(window).height()
+        const dom_h = $(document).height()
+        const offset_bottom = dom_h - win_h
+
+        if(top > offset_bottom - 150) {
+            console.log(currentPage)
+            getData(currentPage+1)
+        } 
+    })
 
     // $('.note>.pages>ul>li').click(
     //     function() {

@@ -28,13 +28,21 @@
                 >img{
                     border-radius: 10px;
                 }
-                >p{
+                >p {
                     font-size: 16px;
                     padding: 0px 3px;
+                    &:nth-child(2) {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                    }
                     +p {
                         display: flex;
                         justify-content: space-between;
                         align-items: end;
+                       
                         >span{
                             &:last-child{
                                 color:grey
