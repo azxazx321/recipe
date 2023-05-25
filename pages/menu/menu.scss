@@ -1,0 +1,88 @@
+#body {
+    background-color: #fae8c8;
+
+    > .menu {
+        width: var(--width-main);
+        margin: 0 auto;
+        > .menu-content {
+            display: flex;
+            flex-wrap: wrap;
+            > li {
+                cursor: pointer;
+                width: calc((100% - 2 * 10px) / 3);
+                margin: 0 10px 10px 0;
+                //overflow: hidden;
+                background-color: white;
+                transition: 0.2s;
+                border-radius: 5px;
+                &:hover {
+                    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+                    > div > img {
+                        transform:  scale(1.05);
+                    }
+                }
+                &:nth-child(3n) {
+                    margin-right: 0;
+                }
+                
+                > div {
+                    position: relative;
+                    overflow: hidden;
+                    > img {
+                        width: 100%;
+                        transition: 0.2s;
+
+                    }
+                   
+                    > div {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        position: absolute;
+                        bottom: 0;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        color: white;
+                        > span {
+                            padding: 0 5px;
+                        }
+                    }
+                    
+                }
+                > p {
+                    padding: 10px;
+                    padding-bottom: 20px;
+                }
+
+
+                
+            }
+        }
+
+        > .pages {
+            width: 40%;
+            display: flex;
+            margin: 0 auto;
+            padding: 20px 0;
+            > .prev {
+    
+            }
+            > .next {
+    
+            }
+            > ul {
+                display: flex;
+                > li {
+                    margin: 0 5px;
+                    padding: 10px 15px;
+                    background-color: white;
+                    &.active {
+                        background-color: orange;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
